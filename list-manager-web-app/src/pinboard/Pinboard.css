@@ -1,83 +1,153 @@
 .pinboard {
     position: fixed;
-    top: 0; right: 0; bottom: 0; left: 0;
+    top: 20px; right: 20px; bottom: 20px; left: 20px;
 
     display: flex;
     align-items: center;
     justify-content: center;
+} 
+.pinboard:hover {
+    border: 5px solid rgba(21, 195, 235, 0.25);
+
+    background-color: rgba(21, 195, 235, 0.1);
+}
+.pinboard:active {
+    background-color: rgba(21, 195, 235, 0.2);
+}
+.pinboard:hover .pinboard-borders {
+    height: 20px;
+    width: 20px;
+}
+.pinboard:hover .pinboard-borders::before {
+    top: -10px; right: -10px; bottom: -10px; left: -10px;
+}
+.pinboard:hover .pinboard-top-left-border::before,
+.pinboard:hover .pinboard-new-list-dialogue-container-top-left-border::before { 
+    border-color: rgba(21, 195, 235, 0.75) transparent transparent rgba(21, 195, 235, 0.75);
+}
+.pinboard:hover .pinboard-top-right-border::before,
+.pinboard:hover .pinboard-new-list-dialogue-container-top-right-border::before { 
+    border-color: rgba(21, 195, 235, 0.75) rgba(21, 195, 235, 0.75) transparent transparent;
+}
+.pinboard:hover .pinboard-bottom-right-border::before,
+.pinboard:hover .pinboard-new-list-dialogue-container-bottom-right-border::before { 
+    border-color: transparent rgba(21, 195, 235, 0.75) rgba(21, 195, 235, 0.75) transparent;
+}
+.pinboard:hover .pinboard-bottom-left-border::before,
+.pinboard:hover .pinboard-new-list-dialogue-container-bottom-left-border::before {
+    border-color: transparent transparent rgba(21, 195, 235, 0.75) rgba(21, 195, 235, 0.75);
+}
+.pinboard:hover .pinboard-new-list-dialogue-container p:first-of-type,
+.pinboard:hover .pinboard-new-list-dialogue-container p:last-child {
+    color: #0f89a5;
 }
 
-.pinboard-top-left-border {
+.pinboard-borders {
+    border-width: 5px;
+
+    height: 30px;
+    width: 30px;
+}
+.pinboard-borders::before {
+    top: -5px; right: -5px; bottom: -5px; left: -5px;
+    border-width: 5px;
+}
+
+.pinboard-borders,
+.pinboard-new-list-dialogue-container-borders {
     position: absolute;
-    top: 10px;
-    left: 10px;
 
-    height: 25px;
-    width: 25px;
-
-    border-top: 5px solid black;
-    border-right: 5px solid white;
-    border-bottom: 5px solid white;
-    border-left: 5px solid black;
+    border-style: solid;
+    border-color: transparent;
+    background-color: transparent;
+    background-clip: padding-box;
 }
-
-.pinboard-top-right-border {
+.pinboard-borders::before,
+.pinboard-new-list-dialogue-container-borders::before {
+    content: "";
     position: absolute;
-    top: 10px;
-    right: 10px;
 
-    height: 25px;
-    width: 25px;
-
-    border-top: 5px solid black;
-    border-right: 5px solid black;
-    border-bottom: 5px solid white;
-    border-left: 5px solid white;
+    border-style: solid;
 }
 
-.pinboard-bottom-right-border {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-
-    height: 25px;
-    width: 25px;
-
-    border-top: 5px solid white;
-    border-right: 5px solid black;
-    border-bottom: 5px solid black;
-    border-left: 5px solid white;
+.pinboard-top-left-border,
+.pinboard-new-list-dialogue-container-top-left-border {
+    top: 0;
+    left: 0;
+}
+.pinboard-top-left-border::before,
+.pinboard-new-list-dialogue-container-top-left-border::before {
+    border-color: black transparent transparent black;
 }
 
-.pinboard-bottom-left-border {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-
-    height: 25px;
-    width: 25px;
-
-    border-top: 5px solid white;
-    border-right: 5px solid white;
-    border-bottom: 5px solid black;
-    border-left: 5px solid black;
+.pinboard-top-right-border,
+.pinboard-new-list-dialogue-container-top-right-border {
+    top: 0;
+    right: 0;
+}
+.pinboard-top-right-border::before,
+.pinboard-new-list-dialogue-container-top-right-border::before {
+    border-color: black black transparent transparent;
 }
 
-.new-list-dialogue-container {
+.pinboard-bottom-right-border,
+.pinboard-new-list-dialogue-container-bottom-right-border {
+    bottom: 0;
+    right: 0;
+}
+.pinboard-bottom-right-border::before,
+.pinboard-new-list-dialogue-container-bottom-right-border::before {
+    border-color: transparent black black transparent;
+}
+
+.pinboard-bottom-left-border,
+.pinboard-new-list-dialogue-container-bottom-left-border {
+    bottom: 0;
+    left: 0;
+}
+.pinboard-bottom-left-border::before,
+.pinboard-new-list-dialogue-container-bottom-left-border::before {
+    border-color: transparent transparent black black;
+}
+
+.pinboard-new-list-dialogue-container {
+    position: relative;
+
+    padding: 20px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 8px;
 
-    font-weight: bold;
+    text-align: center;
+
+    height: 200px;
 }
 
-.new-list-dialogue-container p:first-child {
-    font-size: 18px;
+.pinboard-new-list-dialogue-container-borders {
+    border-width: 3px;
+
+    height: 15px;
+    width: 15px;
+}
+.pinboard-new-list-dialogue-container-borders::before {
+    top: -3px; right: -3px; bottom: -3px; left: -3px;
+    border-width: 3px;
 }
 
-.new-list-dialogue-container p:last-child {
-    font-size: 32px;
+.pinboard-new-list-dialogue-container p {
+    user-select: none;
+}
+
+.pinboard-new-list-dialogue-container p:first-of-type {
+    font-size: 24px;
+}
+
+.pinboard-new-list-dialogue-container p:last-child {
+    font-size: 48px;
     line-height: 16px;
+    font-weight: bold;
 }
 

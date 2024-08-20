@@ -1,14 +1,22 @@
 import "./Pinboard.css"
 
 function Pinboard() {
+    const CreateList = () => {
+        console.log("I am working!")
+    }
+
     return (
-        <div className="pinboard">
-            <div className="pinboard-top-left-border"></div>
-            <div className="pinboard-top-right-border"></div>
-            <div className="pinboard-bottom-right-border"></div>
-            <div className="pinboard-bottom-left-border"></div>
-            <div className="new-list-dialogue-container">
-                <p>Create new list</p>
+        <div className="pinboard" onClick={ () => CreateList() }>
+            <div className="pinboard-top-left-border pinboard-borders"></div>
+            <div className="pinboard-top-right-border pinboard-borders"></div>
+            <div className="pinboard-bottom-right-border pinboard-borders"></div>
+            <div className="pinboard-bottom-left-border pinboard-borders"></div>
+            <div className="pinboard-new-list-dialogue-container">
+                <div className="pinboard-new-list-dialogue-container-top-left-border pinboard-new-list-dialogue-container-borders"></div>
+                <div className="pinboard-new-list-dialogue-container-top-right-border pinboard-new-list-dialogue-container-borders"></div>
+                <div className="pinboard-new-list-dialogue-container-bottom-right-border pinboard-new-list-dialogue-container-borders"></div>
+                <div className="pinboard-new-list-dialogue-container-bottom-left-border pinboard-new-list-dialogue-container-borders"></div>
+                <p>No lists found :(<br></br> Click here to create a new list</p>
                 <p>+</p>
             </div>
         </div>
