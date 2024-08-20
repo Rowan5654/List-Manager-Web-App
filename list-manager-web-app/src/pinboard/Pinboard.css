@@ -1,6 +1,83 @@
-.root-pinboard {
-    position: absolute;
+.pinboard {
+    position: fixed;
     top: 0; right: 0; bottom: 0; left: 0;
 
-    background-color: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.pinboard-top-left-border {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    height: 25px;
+    width: 25px;
+
+    border-top: 5px solid black;
+    border-right: 5px solid white;
+    border-bottom: 5px solid white;
+    border-left: 5px solid black;
+}
+
+.pinboard-top-right-border {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    height: 25px;
+    width: 25px;
+
+    border-top: 5px solid black;
+    border-right: 5px solid black;
+    border-bottom: 5px solid white;
+    border-left: 5px solid white;
+}
+
+.pinboard-bottom-right-border {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+    height: 25px;
+    width: 25px;
+
+    border-top: 5px solid white;
+    border-right: 5px solid black;
+    border-bottom: 5px solid black;
+    border-left: 5px solid white;
+}
+
+.pinboard-bottom-left-border {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+
+    height: 25px;
+    width: 25px;
+
+    border-top: 5px solid white;
+    border-right: 5px solid white;
+    border-bottom: 5px solid black;
+    border-left: 5px solid black;
+}
+
+.new-list-dialogue-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    font-weight: bold;
+}
+
+.new-list-dialogue-container p:first-child {
+    font-size: 18px;
+}
+
+.new-list-dialogue-container p:last-child {
+    font-size: 32px;
+    line-height: 16px;
+}
+
