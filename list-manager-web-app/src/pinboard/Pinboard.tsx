@@ -1,8 +1,13 @@
 import "./Pinboard.css"
 
-function Pinboard() {
+type PinboardProps = {
+    toggleIsNewMenuVisible: (newValue: boolean) => void;
+}
+
+const Pinboard: React.FC<PinboardProps> = ({ toggleIsNewMenuVisible }) => {
     const CreateList = () => {
-        console.log("I am working!")
+        console.log("I am working!");
+        toggleIsNewMenuVisible(true);
     }
 
     return (
